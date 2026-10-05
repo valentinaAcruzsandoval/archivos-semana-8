@@ -1,0 +1,50 @@
+notas = []
+
+def pedirNotas():
+    while True:
+        try:
+            nota = int(input("Dime la nota: "))
+            return nota
+        except ValueError:
+            print("Error, escriba un numero")
+
+def agregarNotas():
+    while True:
+        nota = pedirNotas()
+        if nota>= 0 and nota<=100:
+            notas.append(nota)
+        resp = input("otra nota [s/n]: ")
+        if resp.lower() == "n":
+            return 
+
+def guardarnota():
+    with open("notas.txt", "+a")as notasFile:
+        for nota in notas:
+            notasFile.write(notas + "\n")
+    print("registro Guardado")
+
+def calcularPriomedio():
+    suma = 0
+    for nota in notas:
+        suma += nota
+    return suma / len(notas)
+
+def calcularMayor():
+    mayor = notas [0]
+    for nota in notas:
+        if nota > mayor:
+            mayor = nota    
+    return mayor
+
+def calcularmenor():
+    menor = notas [0]
+    for nota in notas:
+        if nota < menor:
+            menor = nota
+    return menor
+
+guardarnota()
+agregarNotas()
+print(f"Promedio: {calcularPriomedio}")
+print(F"Mayor: {calcularMayor}")
+print(f"Menor: {calcularmenor}")

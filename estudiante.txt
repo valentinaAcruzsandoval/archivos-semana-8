@@ -1,0 +1,8 @@
+Nombre: Valentina
+ Apellidos: Cruz 
+ Edad: 17 anios
+ Carrera:Ing De Sistemas
+ Nombre: Carlos 
+ Apellidos: Igarte
+ Edad: 18 anio
+ Carrera:In G De Sistema
